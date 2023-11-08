@@ -1,0 +1,15 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: routing-and-scheduling
+  projectName: TransPackSys
+  annotations:
+    componentType: service
+spec:
+  inbound:
+    - name: routing-and-scheduling
+      port: 3000
+      type: REST
+      visibility: Project
+      context: .
+      schemaFilePath: openapi.yaml

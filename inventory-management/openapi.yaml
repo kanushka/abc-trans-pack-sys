@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Inventory Management Service API
+  description: API for managing package inventories in warehouses.
+  version: "1.0"
+servers:
+  - url: 'http://api.transpacksys.com/inventory-management'
+paths:
+  /inventory:
+    get:
+      summary: List all items in inventory
+      operationId: getAllInventoryItems
+      tags:
+        - Inventory
+      responses:
+        '200':
+          description: An array of inventory items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InventoryItem'
+
+components:
+  schemas:
+    InventoryItem:
+      type: object
+      required:
+        - itemId
+        - status
+      properties:
+        itemId:
+          type: string
+        status:
+          type: string
+          enum:
+            - in_stock
+            - out_of_stock

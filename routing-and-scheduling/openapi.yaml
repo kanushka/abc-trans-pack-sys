@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Routing and Scheduling Service API
+  description: API for managing routing and scheduling of package deliveries.
+  version: "1.0"
+servers:
+  - url: 'http://api.transpacksys.com/routing-and-scheduling'
+paths:
+  /routes:
+    post:
+      summary: Create a delivery route
+      operationId: createRoute
+      tags:
+        - Routing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RouteRequest'
+      responses:
+        '201':
+          description: Delivery route created
+        '400':
+          description: Bad request
+
+components:
+  schemas:
+    RouteRequest:
+      type: object
+      required:
+        - packageId
+        - destination
+      properties:
+        packageId:
+          type: string
+        destination:
+          type: string

@@ -1,0 +1,15 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: inventory-management
+  projectName: TransPackSys
+  annotations:
+    componentType: service
+spec:
+  inbound:
+    - name: inventory-management
+      port: 3000
+      type: REST
+      visibility: Project
+      context: .
+      schemaFilePath: openapi.yaml

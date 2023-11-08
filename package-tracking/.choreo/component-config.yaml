@@ -1,0 +1,15 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: package-tracking
+  projectName: TransPackSys
+  annotations:
+    componentType: service
+spec:
+  inbound:
+    - name: package-tracking
+      port: 3000
+      type: REST
+      visibility: Project
+      context: .
+      schemaFilePath: openapi.yaml
