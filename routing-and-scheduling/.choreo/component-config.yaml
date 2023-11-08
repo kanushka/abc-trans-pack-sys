@@ -13,3 +13,10 @@ spec:
       visibility: Project
       context: .
       schemaFilePath: openapi.yaml
+  outbound:
+    serviceReferences:
+      - name: choreo:///kanushkagayan/etuf/iumnfy/e0c00/v1.0/PROJECT
+        connectionConfig: 01ee7e0d-1a8a-1260-a67c-f4c56149ef40
+        env:
+          - from: ServiceURL
+            to: <YOUR_ENV_VARIABLE_NAME_HERE>
