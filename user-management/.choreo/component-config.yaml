@@ -8,13 +8,11 @@ metadata:
 spec:
   inbound:
     - name: user-management
-      port: 3000
+      port: 3001
       type: REST
       visibility: Project
       context: .
       schemaFilePath: openapi.yaml
   outbound:
       serviceReferences:
-      - name: choreo:///kanushkagayan/lpar/btpmlu/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/inventory/public
-        dependentConfig: config-1
-        connectionType: service
+

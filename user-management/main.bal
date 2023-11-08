@@ -1,6 +1,6 @@
 import ballerina/http;
 
-configurable int port = 80;
+configurable int port = 3001;
 
 service /user\-management on new http:Listener(port) {
     # Create a new user
