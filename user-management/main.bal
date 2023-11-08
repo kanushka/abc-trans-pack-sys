@@ -1,11 +1,8 @@
 import ballerina/http;
 
-configurable string host = ?;
-configurable int port = ?;
+configurable int port = 80;
 
-listener http:Listener ep0 = new (port, config = {host: host});
-
-service /user\-management on ep0 {
+service /user\-management on new http:Listener(port) {
     # Create a new user
     #
     # + payload - parameter description 
@@ -33,4 +30,8 @@ service /user\-management on ep0 {
         };
         return user;
     }
+}
+
+service / on new http:Listener(0) {
+
 }
