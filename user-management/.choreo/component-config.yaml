@@ -13,3 +13,8 @@ spec:
       visibility: Project
       context: .
       schemaFilePath: openapi.yaml
+  outbound:
+      serviceReferences:
+      - name: choreo:///kanushkagayan/lpar/btpmlu/40c92b81-2ddd-4933-9422-a920b7e27736/v1.0/inventory/public
+        dependentConfig: config-1
+        connectionType: service
